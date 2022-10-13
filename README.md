@@ -13,10 +13,10 @@ There are 3 counters:
 - words correct of the total words
 - words to be practices of the total words
 
-To be deon:
-- CSS changes
-- switch language
-- upload lists 
+To be done:
+- change CSS 
+- add featur to switch language
+- add feature to upload lists 
 - host to netlify.com
 
 
