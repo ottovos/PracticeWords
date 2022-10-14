@@ -15,9 +15,10 @@ There are 3 counters:
 
 To be done:
 - change CSS 
+- Adjust counter to new design
 - add featur to switch language
 - add feature to upload lists 
 - host to netlify.com
 
 
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/40161256-ac48-4615-b121-710ed5d8db7c/deploy-status)](https://app.netlify.com/sites/ubiquitous-fox-3bdad0/deploys)
