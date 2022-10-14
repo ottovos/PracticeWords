@@ -9,16 +9,12 @@ const btnCheck = document.querySelector('.check');
 const btnGotit = document.querySelector('.gotit');
 const btnPract = document.querySelector('.practice');
 const btnHome = document.querySelector('.home');
-const totalWords1 = document.getElementById('totalWords1');
-const totalWords2 = document.getElementById('totalWords2');
-const totalWords3 = document.getElementById('totalWords3');
-const currentWord = document.getElementById('currentWords');
-const gotItWord = document.getElementById('goItWords');
+const totalWords = document.getElementById('totalWords');
 const practWords = document.getElementById('practiceWords');
 
 //ARRAYS
-const arrLanguage1 = ['kerstboom', 'snelweg', 'pannenkoek', 'auto'];
-const arrLanguage2 = ['christmas tree', 'highway', 'pancake', 'car'];
+const arrLanguage1 = ['kerstboom', 'snelweg', 'pannenkoek', 'auto', 'friet'];
+const arrLanguage2 = ['christmas tree', 'highway', 'pancake', 'car', 'fries'];
 
 //initialization  phase
 const init = function () {
@@ -31,11 +27,7 @@ const init = function () {
 
   //score
   const arrLenghtLang1 = arrLanguage1.length;
-  totalWords1.textContent = arrLenghtLang1;
-  totalWords2.textContent = arrLenghtLang1;
-  totalWords3.textContent = arrLenghtLang1;
-  currentWord.textContent = 0;
-  gotItWord.textContent = 0;
+  totalWords.textContent = arrLenghtLang1;
   practWords.textContent = 0;
 };
 
@@ -62,26 +54,24 @@ const check = function () {
 btnCheck.addEventListener('click', check);
 
 //Gotit and Practice functions
-//GotIt
+//GotIt fucnction
 const gotit = function () {
   console.log('gotit button works ');
   arrLanguage1.shift(word1);
   arrLanguage2.shift(word2);
-  console.log(arrLanguage1, arrLanguage2);
-  countClicks(currentWord);
-  countClicks(gotItWord);
+  let leftToPract = arrLanguage1.length;
+  practWords.textContent = leftToPract;
+  console.log(arrLanguage1, arrLanguage2, leftToPract);
   nextword();
 };
 btnGotit.addEventListener('click', gotit);
 
-//Practice
+//Practice function
 const practice = function () {
   console.log('practice botton works');
   arrLanguage1.push(arrLanguage1.shift());
   arrLanguage2.push(arrLanguage2.shift());
   console.log(arrLanguage1, arrLanguage2);
-  countClicks(currentWord);
-  countClicks(practWords);
   nextword();
 };
 btnPract.addEventListener('click', practice);
@@ -111,8 +101,8 @@ btnHome.addEventListener('click', function () {
 });
 
 //scores parameter is the htmltag gott/practice and current
-function countClicks(wordcontext) {
-  let countCurrent = Number(wordcontext.textContent);
-  countCurrent = countCurrent + 1;
-  return (wordcontext.textContent = countCurrent);
-}
+// function countClicks(wordcontext) {
+//   let countCurrent = Number(wordcontext.textContent);
+//   countCurrent = countCurrent + 1;
+//   return (wordcontext.textContent = countCurrent);
+// }
