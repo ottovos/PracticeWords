@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Practice Words</title>
+    <title>2Practice Words</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main>
-      <section class="column" id="column1">
-        <h2 class="columnHeader" id="language1">Dutch</h2>
-        <p class="word" id="word1">Kerstboom</p>
-        <button class="btn start">Start</button>
-      </section>
-      <section class="column" id="column2">
-        <h2 class="columnHeader" id="language2">English</h2>
+    <div class="container">
+    <div class="column" id="column1">
+      <button class="btn start">Start</button>
+      <button class="btn home">home🏠</button>
+    </div>
+    <div class="column" id="column2">
+      <h3 class="columnHeader" id="language1">Dutch</h3>
+      <p class="word" id="word1">Kerstboom</p>
+    </div>
+      <div class="column" id="column3">
+        <h3 class="columnHeader" id="language2">English</h3>
         <p class="word" id="word2">Christmas tree</p>
+      </div>
+      <div class="column" id="column4">  
         <button class="btn check">Check</button>
-      </section>
-      <section class="column" id="column3">
-        <h2 class="columnHeader" id="scores"></h2>
-          <button class="btn gotit">nailed it🥳</button>
-          <br></br>
-          <button class="btn practice">practice🦉</button>
-          <br></br>
-          <button class="btn home">home🏠</button>
-        </section>
-        <section class="column" id="column4">
-      <div >
+        <button class="btn gotit">nailed it🥳</button>
+        <br></br>
+        <button class="btn practice">practice🦉</button>
+      </div>
+      <div class="column" id="column5">
+        <h3 class="columnHeader" id="scores">Scores</h3>
         <label>Total Words
-        <p class="totalWords" id="totalWords">100</p>
-      </label>
+          <p class="totalWords" id="totalWords">100</p>
+        </label>
       </div>
-      <div>
+      <div class="column" id="column6">
+        <h3 class="columnHeader" id="scores">Scores</h3>
         <label>Left to Practice
-        <p id="practiceWords">3</p>
+        <p class="practiceWords" id="practiceWords">3</p>
       </label>
       </div>
-    </section>
-    </main>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

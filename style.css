@@ -1,82 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-
-* {
-  margin: 5;
-  padding: 0;
-  box-sizing: inherit;
-}
-
-html {
-  font-size: 62.5%;
-  box-sizing: border-box;
-}
-
+/*LAYOUT BODY*/
 body {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 400;
-  height: 100vh;
-  color: #333;
-  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 40px;
+  font-size: 100%;
 }
 
-/* LAYOUT */
-main {
-  position: relative;
-  width: 100rem;
-  height: 60rem;
-  background-color: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(200px);
-  filter: blur();
-  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
-  border-radius: 9px;
-  overflow: hidden;
-  display: flex;
-}
-
-/*OBJECTS*/
-.column {
-  flex: 50%;
-  padding: rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: all 0.75s;
-}
-.word {
-  position: relative;
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  word-spacing: 2px;
-  font-weight: 200;
-  margin-bottom: 1rem;
-}
-
-.btn {
-  position: relative;
-  left: 40%;
-  transform: translateX(-50%);
+/*CONTAINER*/
+.container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 10px;
+  background-color: #fff;
   color: #444;
-  background: none;
-  border: none;
-  font-family: inherit;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-weight: 350;
-  transition: all 0.2s;
+}
 
-  background-color: white;
-  background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
+.column {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 100%;
+}
 
-  padding: 0.7rem 2.5rem;
-  border-radius: 50rem;
-  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
-  top: 20rem;
+/*DESIGN*/
+.h1 {
+  font-family: Tahoma, Verdana, sans-serif;
+  font-style: oblique;
+  font-size: %;
+}
+
+.p {
+  font-family: Tahoma, Verdana, sans-serif;
+  font-style: oblique;
+  font-size: 30em;
+}
+
+/*RESPONSIVENESS*/
+@media screen and (max-width: 768px) {
+  .navigation-menu {
+    grid-column: span 6;
+  }
+  .main-content {
+    grid-column: span 6;
+  }
+}
+@media screen and (max-width: 480px) {
+  .navigation-menu {
+    grid-column: span 12;
+  }
+  .main-content {
+    grid-column: span 12;
+  }
 }
 
 .hidden {

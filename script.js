@@ -24,11 +24,10 @@ const init = function () {
   btnGotit.disabled = true;
   btnPract.disabled = true;
   btnHome.classList.add('hidden');
-
   //score
   const arrLenghtLang1 = arrLanguage1.length;
   totalWords.textContent = arrLenghtLang1;
-  practWords.textContent = 0;
+  practWords.textContent = 5;
 };
 
 init();
@@ -59,7 +58,7 @@ const gotit = function () {
   console.log('gotit button works ');
   arrLanguage1.shift(word1);
   arrLanguage2.shift(word2);
-  let leftToPract = arrLanguage1.length;
+  const leftToPract = arrLanguage1.length;
   practWords.textContent = leftToPract;
   console.log(arrLanguage1, arrLanguage2, leftToPract);
   nextword();
