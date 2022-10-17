@@ -48,7 +48,8 @@ const check = function () {
   console.log('check button works');
   btnGotit.disabled = false;
   btnPract.disabled = false;
-  word2.textContent = arrLanguage2[0];
+  btnStart.classList.add('hidden');
+  word2.textContent = arrLanguage2[0]; //show the first element of the array since the gotit function will shift element
 };
 btnCheck.addEventListener('click', check);
 
@@ -84,9 +85,11 @@ const nextword = function () {
     btnGotit.disabled = true;
     btnPract.disabled = true;
   } else {
-    alert(
-      'Great result!! See you final scores You have reached the end of the  list with words. Click home to start again'
-    );
+    setTimeout(function () {
+      alert(
+        'Great result!! See you final scores You have reached the end of the  list with words. Click home to start again'
+      );
+    }, 0.5);
     btnCheck.classList.add('hidden');
     btnGotit.classList.add('hidden');
     btnPract.classList.add('hidden');
