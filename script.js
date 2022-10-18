@@ -39,19 +39,12 @@ const init = function () {
 init();
 //switch language array1<->array2
 const changeLang = function () {
-  console.log('switch button works');
-  console.log(language1, language2);
-
+  console.log('switch button');
+  //switching dutch<->english labels
   let tempLang;
   tempLang = language1.textContent;
   language1.textContent = language2.textContent;
   language2.textContent = tempLang;
-  console.log(language1, language2);
-  console.log(arrLanguage1);
-  // [language1.textContent, language2.textContent] = [
-  //   language2.textContent,
-  //   language1.textContent,
-  // ];
   [arrLanguage1, arrLanguage2] = [arrLanguage2, arrLanguage1];
   console.log(arrLanguage1);
 };
@@ -60,7 +53,7 @@ btnSwitch.addEventListener('click', changeLang);
 
 //start button function
 const start = function () {
-  console.log('function start does work');
+  console.log('function start');
   word1.classList.remove('hidden');
   word2.classList.remove('hidden');
   word2.textContent = '?';
@@ -72,7 +65,7 @@ btnStart.addEventListener('click', start);
 
 //check button function
 const check = function () {
-  console.log('check button works');
+  console.log('check button');
   btnGotit.disabled = false;
   btnPract.disabled = false;
   btnStart.classList.add('hidden');
@@ -83,7 +76,7 @@ btnCheck.addEventListener('click', check);
 //Gotit and Practice functions
 //GotIt fucnction
 const gotit = function () {
-  console.log('gotit button works ');
+  console.log('gotit button');
   arrLanguage1.shift(word1);
   arrLanguage2.shift(word2);
   const leftToPract = arrLanguage1.length;
@@ -116,7 +109,7 @@ const nextword = function () {
       alert(
         'Great result!! See you final scores You have reached the end of the  list with words. Click home to start again'
       );
-    }, 0.5);
+    }, 1);
     btnCheck.classList.add('hidden');
     btnGotit.classList.add('hidden');
     btnPract.classList.add('hidden');
