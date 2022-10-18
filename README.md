@@ -15,10 +15,10 @@ There are 3 counters:
 
 To be done:
 - change CSS 
-- Adjust counter to new design
-- add featur to switch language
+- Adjust counter to new design - DONE
+- add featur to switch language - DONE
 - add feature to upload lists 
-- host to netlify.com
+- host to netlify.com - DONE
 
 Netlify domain: https://ubiquitous-fox-3bdad0.netlify.app/
 
