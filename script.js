@@ -29,6 +29,7 @@ const init = function () {
   btnGotit.disabled = true;
   btnPract.disabled = true;
   btnHome.classList.add('hidden');
+  btnSwitch.classList.remove('hidden');
   //score
   const arrLenghtLang1 = arrLanguage1.length;
   totalWords.textContent = arrLenghtLang1;
@@ -36,7 +37,7 @@ const init = function () {
 };
 
 init();
-
+//switch language array1<->array2
 const changeLang = function () {
   console.log('switch button works');
   console.log(language1, language2);
@@ -64,6 +65,7 @@ const start = function () {
   word2.classList.remove('hidden');
   word2.textContent = '?';
   btnCheck.disabled = false;
+  btnSwitch.classList.add('hidden');
   word1.textContent = arrLanguage1[0];
 };
 btnStart.addEventListener('click', start);
