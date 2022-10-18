@@ -9,12 +9,17 @@ const btnCheck = document.querySelector('.check');
 const btnGotit = document.querySelector('.gotit');
 const btnPract = document.querySelector('.practice');
 const btnHome = document.querySelector('.home');
+const btnSwitch = document.querySelector('.switch');
 const totalWords = document.getElementById('totalWords');
 const practWords = document.getElementById('practiceWords');
+let language1 = document.getElementById('language1');
+let language2 = document.getElementById('language2');
 
 //ARRAYS
-const arrLanguage1 = ['kerstboom', 'snelweg', 'pannenkoek', 'auto', 'friet'];
-const arrLanguage2 = ['christmas tree', 'highway', 'pancake', 'car', 'fries'];
+let arrLanguage1 = ['kerstboom', 'snelweg', 'pannenkoek', 'auto', 'friet'];
+let arrLanguage2 = ['christmas tree', 'highway', 'pancake', 'car', 'fries'];
+// let tempArrLang1 = arrLanguage1;
+// let tempArrLang2 = arrLanguage2;
 
 //initialization  phase
 const init = function () {
@@ -31,6 +36,26 @@ const init = function () {
 };
 
 init();
+
+const changeLang = function () {
+  console.log('switch button works');
+  console.log(language1, language2);
+
+  let tempLang;
+  tempLang = language1.textContent;
+  language1.textContent = language2.textContent;
+  language2.textContent = tempLang;
+  console.log(language1, language2);
+  console.log(arrLanguage1);
+  // [language1.textContent, language2.textContent] = [
+  //   language2.textContent,
+  //   language1.textContent,
+  // ];
+  [arrLanguage1, arrLanguage2] = [arrLanguage2, arrLanguage1];
+  console.log(arrLanguage1);
+};
+
+btnSwitch.addEventListener('click', changeLang);
 
 //start button function
 const start = function () {
