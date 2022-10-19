@@ -294,7 +294,7 @@ const init = function () {
   //score
   const arrLenghtLang1 = arrLanguage1.length;
   totalWords.textContent = arrLenghtLang1;
-  practWords.textContent = 0;
+  practWords.textContent = arrLanguage2.length;
 };
 
 init();
