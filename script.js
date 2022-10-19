@@ -205,6 +205,8 @@ const init = function () {
   btnPract.classList.add('hidden');
   btnHome.classList.add('hidden');
   btnSwitch.classList.remove('hidden');
+  btnGotit.disabled = true;
+  btnPract.disabled = true;
   //score
   const arrLenghtLang1 = arrLanguage1.length;
   totalWords.textContent = arrLenghtLang1;
@@ -244,6 +246,8 @@ const check = function () {
   btnGotit.classList.remove('hidden');
   btnPract.classList.remove('hidden');
   btnStart.classList.add('hidden');
+  btnGotit.disabled = false;
+  btnPract.disabled = false;
   word2.textContent = arrLanguage2[0]; //show the first element of the array since the gotit function will shift element
 };
 btnCheck.addEventListener('click', check);
@@ -251,23 +255,33 @@ btnCheck.addEventListener('click', check);
 //Gotit and Practice functions
 //GotIt fucnction
 const gotit = function () {
-  console.log('gotit button');
-  arrLanguage1.shift(word1);
-  arrLanguage2.shift(word2);
-  const leftToPract = arrLanguage1.length;
-  practWords.textContent = leftToPract;
-  console.log(arrLanguage1, arrLanguage2, leftToPract);
-  nextword();
+  if (word2.textContent != '?') {
+    console.log('gotit button');
+    arrLanguage1.shift(word1);
+    arrLanguage2.shift(word2);
+    const leftToPract = arrLanguage1.length;
+    practWords.textContent = leftToPract;
+    console.log(arrLanguage1, arrLanguage2, leftToPract);
+    nextword();
+  } else {
+    btnGotit.disabled = true;
+    btnPract.disabled = true;
+  }
 };
 btnGotit.addEventListener('click', gotit);
 
 //Practice function
 const practice = function () {
-  console.log('practice botton works');
-  arrLanguage1.push(arrLanguage1.shift());
-  arrLanguage2.push(arrLanguage2.shift());
-  console.log(arrLanguage1, arrLanguage2);
-  nextword();
+  if (word2.textContent != '?') {
+    console.log('practice botton works');
+    arrLanguage1.push(arrLanguage1.shift());
+    arrLanguage2.push(arrLanguage2.shift());
+    console.log(arrLanguage1, arrLanguage2);
+    nextword();
+  } else {
+    btnPract.disabled = true;
+    btnGotit.dispatchEvent = true;
+  }
 };
 btnPract.addEventListener('click', practice);
 
