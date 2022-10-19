@@ -1,23 +1,198 @@
 'use strict';
 //TO DO:  CHANGE CSS STYLE AND ADD FEATURE TO EASILY UPLOAD WORD LISTS AND ADD CHANGE LANGUAGE
 
-//HTML constants
+//HTML-elements declarations
 const word1 = document.getElementById('word1');
 const word2 = document.getElementById('word2');
+
 const btnStart = document.querySelector('.start');
 const btnCheck = document.querySelector('.check');
 const btnGotit = document.querySelector('.gotit');
 const btnPract = document.querySelector('.practice');
 const btnHome = document.querySelector('.home');
 const btnSwitch = document.querySelector('.switch');
+
 const totalWords = document.getElementById('totalWords');
 const practWords = document.getElementById('practiceWords');
+
 let language1 = document.getElementById('language1');
 let language2 = document.getElementById('language2');
 
+const upLoad = document.getElementById('upload');
+
 //ARRAYS
-let arrLanguage1 = ['kerstboom', 'snelweg', 'pannenkoek', 'auto', 'friet'];
-let arrLanguage2 = ['christmas tree', 'highway', 'pancake', 'car', 'fries'];
+let arrLanguage1 = [
+  'de straat',
+  'het plein',
+  'het huisnummer',
+  'het telefoonnummer',
+  'Dultsland',
+  'opbellen',
+  'de verjaardag',
+  'Wanner ben je jarig?',
+  'Hoe oud bent u?',
+  'de leeftijd',
+  'het jaar',
+  'de maand',
+  'jong - oud',
+  'de jongere',
+  'de volwassene',
+  'mannelijk',
+  'vrouwelijk',
+  'de man',
+  'de vrouW',
+  'het kind',
+  'de jongen',
+  'het meisje',
+  'getrouwd',
+  'net getrouwd',
+  'We zijn nu vijf jaar getrouwd',
+  'We zijn gisteren getrouwd',
+  'de famille, het gezin',
+  'de dochter',
+  'Goedenavond',
+  'Hallo',
+  'Hoi Peter',
+  'Tot ziens',
+  'Tot ziens (telefoon)',
+  'Dag',
+  'Doe de groeten aan..',
+  'Hoe gaat het met je/u?',
+  'Bedankt, goed',
+  'Graag gedaan!',
+  'alstublleft - dank u wel',
+  'Pas op!',
+  'stop!',
+  'Heeft u zin om...?',
+  'Mag ik je uitnodigen.',
+  'Ja graag!',
+  'Nee dank u',
+  'Hartelijk dank',
+  'Ik heb een Idee.',
+  'Ik doe een voorstel',
+  'Ik zou ...',
+  'mar natuurlijk',
+  'natuurlijk',
+  'helemaal niet',
+  'nee, liever niet',
+  'dat is aardig, maar...',
+  'nee, absoluut niet',
+  'het spijt me, maar',
+  'Sorry!',
+  'Dat geeft niks,',
+  'de zoon',
+  'de oom',
+  'de tante',
+  'de vader',
+  'de moeder',
+  'Heb je nog broers of zussen?',
+  'de baby',
+  'de broer',
+  'de zus',
+  'de (groot)ouders',
+  'een familielid',
+  'een kennis',
+  'Ze is familie van..',
+  'Dat geeft niks.',
+  'Is het mogelljk dat ... ?',
+  'Kan Ik...?',
+  'Kan dat?',
+  'Ik heb nog één verzoek',
+  'Mag Ik aan je voorstellen? Dit is ..naam',
+  'Aangenaam!',
+  'Gefeliciteerd!',
+  'Hartelljk gefeliciteerd met je verjaardag.',
+  'Beterschap',
+  'Goede reis!',
+  'Veel plezier!',
+  'Gecondoleerd',
+];
+let arrLanguage2 = [
+  'die Straße',
+  'der Platz',
+  'die Hausnummer',
+  'die Telefonnummer',
+  'Deutschland',
+  'anrufen',
+  'der Geburtstag',
+  'Wann hast du Geburtstag?',
+  'We alt sind Sie?',
+  'das Alter',
+  'das Jahr (die Jahre)',
+  'der Monat (die Monate)',
+  'Jung - alt',
+  'de Jugendliche',
+  'der Erwachsene',
+  'männlich',
+  'weiblich',
+  'der Mann (die Männer)',
+  'die Frau (die Frauen)',
+  'das Kind (die Kinder)',
+  'der Junge (die Jungen)',
+  'das Mädchen (die Mädchen)',
+  'verheiratet',
+  'ledig, nicht verheiratet',
+  'Wir sind jetzt fünf Jahre verheiratet',
+  'Wir haben gester geheiratet',
+  'die Famille',
+  'die Tochter (die Töchter)',
+  'Guten Abend',
+  'Hallo',
+  'Grüß dich Peter',
+  '(Auf) Wiedersehen',
+  'Auf Wiederhören',
+  'de telefoon:',
+  'Viele Grüße an ...',
+  "Wie geht's dir / Ihnen?",
+  'danke, gut',
+  'Bittel',
+  'bitte - danke',
+  'Vorsicht!',
+  'halt!',
+  'Haben Sie Lust ...',
+  'Darf ich dich einladen?',
+  'Ja, gerne!',
+  'Nein danke,',
+  'Vielen Dank!',
+  'Ich habe eine Idee.',
+  'Ich mache einen Vorschlag.',
+  'Ich würde ....',
+  'bitte',
+  'klar / aber natürlichl',
+  'überhaupt nicht',
+  'nein, lieber nicht',
+  'das ist nett, aber ...',
+  'nein, auf keinen Fall',
+  'es tut mir Leid, aber ...',
+  'Entschuldigung!',
+  'Das macht nichts.',
+  'der Sohn (die Söhne)',
+  'der Onkel (die Onkel)',
+  'die Tante (die Tanten)',
+  'der Vater',
+  'die Mutter',
+  'Hast du noch Geschwister?',
+  'das Baby',
+  'der Bruder (die Brüder)',
+  'die Schwester (die Schwestern)',
+  'die (Groß)eltern',
+  'ein Verwandter / eine Verwandte',
+  'ein Bekannter / eine Bekannte',
+  'Sie ist verwandt mit ...',
+  'Das macht nichts.',
+  'Ist es möglich, dass ...',
+  'Kann ich ... ?',
+  'Geht das?',
+  'Ich habe noch eine Bitte',
+  'Darf Ich vorstellen? Das ist',
+  'Angenehm',
+  'Glückwunsch',
+  'Herzlichen Glückwunsch zum Geburtstag,',
+  'Gute Besserung',
+  'Gute Reise',
+  'Viel Spaß!',
+  'Mein Beileid',
+];
 // let tempArrLang1 = arrLanguage1;
 // let tempArrLang2 = arrLanguage2;
 
@@ -121,6 +296,11 @@ const nextword = function () {
 btnHome.addEventListener('click', function () {
   location.reload();
 });
+
+//upload and parse excel
+// upLoad.addEventListener('change', function () {
+//   console.log('upload works');
+// });
 
 //scores parameter is the htmltag gott/practice and current
 // function countClicks(wordcontext) {

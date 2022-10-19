@@ -15,6 +15,7 @@ There are 3 counters:
 
 To be done:
 - change CSS 
+- add UX friendly design (embarrissing now) 
 - Adjust counter to new design - DONE
 - add featur to switch language - DONE
 - add feature to upload lists 
