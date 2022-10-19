@@ -25,9 +25,9 @@ let arrLanguage2 = ['christmas tree', 'highway', 'pancake', 'car', 'fries'];
 const init = function () {
   word1.classList.add('hidden');
   word2.classList.add('hidden');
-  btnCheck.disabled = true;
-  btnGotit.disabled = true;
-  btnPract.disabled = true;
+  btnCheck.classList.add('hidden');
+  btnGotit.classList.add('hidden');
+  btnPract.classList.add('hidden');
   btnHome.classList.add('hidden');
   btnSwitch.classList.remove('hidden');
   //score
@@ -57,7 +57,7 @@ const start = function () {
   word1.classList.remove('hidden');
   word2.classList.remove('hidden');
   word2.textContent = '?';
-  btnCheck.disabled = false;
+  btnCheck.classList.remove('hidden');
   btnSwitch.classList.add('hidden');
   word1.textContent = arrLanguage1[0];
 };
@@ -66,8 +66,8 @@ btnStart.addEventListener('click', start);
 //check button function
 const check = function () {
   console.log('check button');
-  btnGotit.disabled = false;
-  btnPract.disabled = false;
+  btnGotit.classList.remove('hidden');
+  btnPract.classList.remove('hidden');
   btnStart.classList.add('hidden');
   word2.textContent = arrLanguage2[0]; //show the first element of the array since the gotit function will shift element
 };
@@ -102,8 +102,8 @@ const nextword = function () {
     btnStart.classList.add('hidden');
     word1.textContent = arrLanguage1[0];
     word2.textContent = '?';
-    btnGotit.disabled = true;
-    btnPract.disabled = true;
+    btnGotit.disabled = false;
+    btnPract.disabled = false;
   } else {
     setTimeout(function () {
       alert(
