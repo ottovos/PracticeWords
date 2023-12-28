@@ -21,6 +21,10 @@ To be done:
 - add feature to upload lists 
 - host to netlify.com - DONE
 
+**#links**
 Netlify domain: https://ubiquitous-fox-3bdad0.netlify.app/
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/40161256-ac48-4615-b121-710ed5d8db7c/deploy-status)](https://app.netlify.com/sites/ubiquitous-fox-3bdad0/deploys)
+
+UX https://whimsical.com/practice-app-KUVcYkxYwdeFc5gxkyYN2D
+
